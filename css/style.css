@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI';
+}
+
+html body {
+    background: linear-gradient(135deg, #4b4b4b, #51ade5),
+                repeating-linear-gradient(0deg, transparent, transparent 49px,
+                rgba(255,255,255,0.1) 50px);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    background-color: transparent;
+}
+
+nav.nav-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+nav div.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 0 15px;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+nav div.logo img {
+    width: 25px;
+    padding-left: 2px;
+}
+
+nav div.logo a {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: all;
+    transition-duration: 500ms;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+nav ul li a:hover {
+    color: #4b4b4b;
+    border-bottom: 2px solid #4b4b4b;
+    cursor: pointer;
+}
+
+nav div.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+span.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    background-color: #fff;
+}
+
+section.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    height: 85vh;
+    box-sizing: border-box;
+}
+
+div.container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    height: 425px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #4b4b4b;
+    box-shadow: 10px 10px 20px rgba(225, 225, 225, 0.5);
+}
+
+input.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 15px;
+    font-size: 30px;
+    background-color: #fff;
+    color: #000;
+    pointer-events: none;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+div.buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+div.buttons button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+div.buttons button:active {
+    transform: scale(0.99);
+    color: #51ace555;
+}
+
+button.operator {
+    color: #51ade5;
+}
+
+@media (max-width: 768px) {
+    nav div.hamburger {
+        display: block;
+        margin: 0 15px;
+    }
+
+    span.bar {
+        border-radius: 100px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav ul.menu {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: -100%;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        text-align: center;
+        transition: top 700ms ease;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul.menu.active {
+        top: 60px;
+        transition: all;
+        transition-duration: 700ms;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+    }
+}
